@@ -9,10 +9,14 @@ Version:
     11/20/2015 11:56:55 AM
 
 By:
-    Johan.Nylander\@bils.se
+    Johan.Nylander\@nbis.se
+
+Usage:
+    ./check_md5sums.sh
 
 Description:
-    Check md5sums on any md5 files found in dir tree.
+    Check md5sums on any md5 files found in directory tree,
+    starting in the current working directory.
     Files need to end in .md5 (case insensitive).
 
 Options:
