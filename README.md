@@ -25,7 +25,7 @@ check the files given in a `CHECKSUMS` file.
 
 #### Usage:
 
-    $ ./checksums.sh CHECKSUMS
+    $ ./checksum.sh CHECKSUMS
 
 #### Options:
 
