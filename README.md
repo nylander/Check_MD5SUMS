@@ -3,7 +3,8 @@
 ## check_md5sums.sh
 
 Check md5sums on any md5 files found in directory tree (starting in cwd).
-Md5 files need to end in `.md5` (case insensitive).
+Md5 files need to end in `.md5` (case insensitive), or be named `MD5SUM`,
+or `MD5SUMS` (case insensitive).
 
 #### Usage:
 

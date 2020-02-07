@@ -6,7 +6,7 @@ File:
     check_md5sums.sh
 
 Version:
-    11/20/2015 11:56:55 AM
+   7 feb 2020
 
 By:
     Johan.Nylander\@nbis.se
@@ -17,7 +17,8 @@ Usage:
 Description:
     Check md5sums on any md5 files found in directory tree,
     starting in the current working directory.
-    Files need to end in .md5 (case insensitive).
+    Files need to end in .md5 (case insensitive),
+    or be named MD5SUMS or MD5SUM.
 
 Options:
     -?, -h  -- show this help
@@ -53,7 +54,7 @@ dirs=($(find "$PWD" -type d))
 
 for dir in "${dirs[@]}"; do
   cd "$dir"
-  myarray=($(find ./ -maxdepth 1 -iname "*.md5"))
+  myarray=($(find ./ -maxdepth 1 -iname '*.md5' -or -iname 'MD5SUM' -or -iname 'MD5SUMS'))
   if [ ${#myarray[@]} -gt 0 ]; then
     found=1
     if [ "$verbose" -eq 1 ]; then
@@ -69,7 +70,7 @@ for dir in "${dirs[@]}"; do
   fi
 done
 if [ "$found" -eq 0 ]; then
-  echo "No md5 files found"
+  echo "No md5 files found (look for MD5SUMS or .md5)"
 fi
 if [ "$verbose" -eq 1 ]; then
   echo 'Done with script' "$0"
